@@ -341,16 +341,28 @@ void showCustomDateRangePicker(
   /// Show the CustomDateRangePicker dialog box
   showDialog<dynamic>(
     context: context,
-    builder: (BuildContext context) => CustomDateRangePicker(
-      barrierDismissible: true,
-      backgroundColor: backgroundColor,
-      primaryColor: primaryColor,
-      minimumDate: minimumDate,
-      maximumDate: maximumDate,
-      initialStartDate: startDate,
-      initialEndDate: endDate,
-      onApplyClick: onApplyClick,
-      onCancelClick: onCancelClick,
-    ),
-  );
+    builder: (BuildContext context) => Dialog(
+        backgroundColor: colorScheme.onSurface,
+        child: Consumer<TasksProvider>(
+          builder: (context, taskProvider, child) => Card(
+            color: Colors.transparent,
+            elevation: 0,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 500, minWidth: 300),
+              child: CustomDateRangePicker(
+                  barrierDismissible: true,
+                  backgroundColor: backgroundColor,
+                  primaryColor: primaryColor,
+                  minimumDate: minimumDate,
+                  maximumDate: maximumDate,
+                  initialStartDate: startDate,
+                  initialEndDate: endDate,
+                  onApplyClick: onApplyClick,
+                  onCancelClick: onCancelClick,
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
 }
