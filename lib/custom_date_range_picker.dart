@@ -342,7 +342,6 @@ void showCustomDateRangePicker(
   showDialog<dynamic>(
     context: context,
     builder: (BuildContext context) => Dialog(
-        backgroundColor: colorScheme.onSurface,
         child: Card(
             color: Colors.transparent,
             elevation: 0,
