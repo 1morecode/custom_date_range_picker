@@ -343,8 +343,7 @@ void showCustomDateRangePicker(
     context: context,
     builder: (BuildContext context) => Dialog(
         backgroundColor: colorScheme.onSurface,
-        child: Consumer<TasksProvider>(
-          builder: (context, taskProvider, child) => Card(
+        child: Card(
             color: Colors.transparent,
             elevation: 0,
             child: ConstrainedBox(
@@ -362,7 +361,6 @@ void showCustomDateRangePicker(
                 ),
               ),
             ),
-          ),
         ),
       );
 }
