@@ -103,18 +103,8 @@ class CustomDateRangePickerState extends State<CustomDateRangePicker>
           },
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(0.0),
               child: Container(
-                decoration: BoxDecoration(
-                  color: widget.backgroundColor,
-                  borderRadius: const BorderRadius.all(Radius.circular(24.0)),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        offset: const Offset(4, 4),
-                        blurRadius: 8.0),
-                  ],
-                ),
                 child: InkWell(
                   borderRadius: const BorderRadius.all(Radius.circular(24.0)),
                   onTap: () {},
@@ -341,12 +331,7 @@ void showCustomDateRangePicker(
   /// Show the CustomDateRangePicker dialog box
   showDialog<dynamic>(
     context: context,
-    builder: (BuildContext context) => Dialog(
-      backgroundColor: Colors.transparent,
-        child: Card(
-            color: Colors.transparent,
-            elevation: 0,
-            child: ConstrainedBox(
+    builder: (BuildContext context) => ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 500, minWidth: 300),
               child: CustomDateRangePicker(
                   barrierDismissible: true,
@@ -360,7 +345,5 @@ void showCustomDateRangePicker(
                   onCancelClick: onCancelClick,
                 ),
               ),
-            ),
-        ),
-      );
+            );
 }
